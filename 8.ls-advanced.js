@@ -29,7 +29,8 @@ async function ls (folder) {
     const fileSize = stats.size.toString()
     const fileModified = stats.mtime.toLocaleString()
 
-    return `${pc.bgMagenta(fileType)} ${pc.blue(file.padEnd(20))} ${pc.green(fileSize.padStart(10))} ${pc.yellow(fileModified)}`
+    // con estas lineas de abajo cambiamos el color de los archivos por defecto de la consola 
+    return ` ${pc.blue(file.padEnd(20))} ${pc.green(fileSize.padStart(10))} ${pc.yellow(fileModified)}`
   })
 
   const filesInfo = await Promise.all(filesPromises)
